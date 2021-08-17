@@ -4,8 +4,33 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width">
-<link rel="stylesheet" href="style.css">
-<title>image carousel</title>
+	<title>image carousel</title>
+	<style> /* CSS code in use */
+body { max-width: 500px; }
+#sample { overflow-x: auto; }
+#container {
+  width: 95%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;    
+}
+img { width: 100%; }
+#prev, #next {  
+  position: absolute;
+  top: 30px;
+  cursor: pointer;
+  padding: 16px;
+  color: gray;
+  font-weight: bold;
+  user-select: none;
+}
+#prev{ left: 0; }
+#next{ right: 0; }
+#prev:hover, #next:hover {
+  background: rgba(0, 0, 0, 0.5);
+} 
+</style>
 </head>
 <body> serdar
 <div id=container>
@@ -23,7 +48,6 @@
 	 <div><img src="hungrylion2.jpg"></div>
 	 <div><img src="dogfunnymeat.jpg"></div>
 	 <div><img src="dogseatingjackal.jpg"></div>
-	 <div><img src="dontbesad.jpg"></div>
 	 <div><img src="deadlion2.jpg"></div>
 	 <div><img src="ignorance2.jpg"></div>
 	 <div><img src="sleepingonsilk.jpg"></div>
@@ -51,8 +75,7 @@
             <span class="dot"></span>
             <span class="dot"></span>
             <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
+	    <span class="dot"></span>
         </div>
 </div>
 
