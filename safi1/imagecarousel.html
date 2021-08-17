@@ -1,12 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)https://maeyler.github.io/JS/simple/carousel.html -->
-<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" href="./akifImage Carousel_files/JS.png">
-    <title>Image Carousel</title>
-    
-  <style> /* CSS code in use */
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+	<title> Do not be upset about bad times </title>
+	<style> /* CSS code in use */
 body { max-width: 500px; }
 #sample { overflow-x: auto; }
 #container {
@@ -31,27 +29,97 @@ img { width: 100%; }
 #prev:hover, #next:hover {
   background: rgba(0, 0, 0, 0.5);
 } 
+
+.fade{
+/* Animation support for different browsers */-webkit-animation-name: fade;-webkit-animation-duration: 1.5s;animation-name: fade;animation-duration: 1.5s;}
+
+@-webkit-keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+} 
+
+@media(max-width:768px){
+    .container{
+        width: 100%;
+    }
+}
+
 </style>
 </head>
-
 <body>
-<h2 id="title">Image Carousel</h2>
+<h2 id="title"> Do not be upset about bad times" </h2>
 <div id="container">
-    <div><img src="./akifImage Carousel_files/JS.png" hidden=""></div>
-    <div><img src="./akifImage Carousel_files/305A.png" hidden=""></div>
-    <div><img src="./akifImage Carousel_files/cache.jpg" hidden=""></div>
-    <div><img src="./akifImage Carousel_files/cache.png" hidden=""></div>
-    <div><img src="./akifImage Carousel_files/Canvas_sun.png"></div>
-    <div><img src="./akifImage Carousel_files/complex.png" hidden=""></div>
+	<div class="fade">
+		<div><img src="./image carousel_files/dontbesad.jpg" =""></div>
+	 
+	<div ="fade">
+		<div><img src="./image carousel_files/tearfulsandglass.jpg" hidden=""></div>
+	 
+	<div ="fade">
+		<div><img src="./image carousel_files/train.jpg" hidden=""></div>
+	 
+	<div ="fade">
+		<div><img src="./image carousel_files/dogs.jpg" hidden=""></div>
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/dontassume3.jpg" hidden=""></div>       
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/baddogsdancin.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/dognotequallion.jpg" hidden=""></div>       
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/lionking.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/woundedlion.jpg" hidden=""></div>        
+	
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/dogsaredogs.png" hidden=""></div>        
+	 
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/deadlion2.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/hungrylion2.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/dogfunnymeat.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/dogseatingjackal.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/deadlion2.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/ignorance2.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/sleepingonsilk.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/wiselion.jpg" hidden=""></div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/sleepinglion.jpg" hidden=""> </div>        
+	<div ="image fade">
+
+		<div><img src="./image carousel_files/umar mukhtar.jpg" hidden=""> </div>        
+
     <a id="prev" onclick="show_slide(-1)">❮</a>
     <a id="next" onclick="show_slide(1)">❯</a>
+
 </div>
-<hr>
-<b>Sample code</b>
-<pre id="sample">function show_slide(i) {<br>  //increment/decrement slide index<br>  index += i;<br>  // adjust index at two ends<br>  if (index &gt; images.length - 1) index = 0 ;<br>  if (index &lt; 0) index = images.length - 1;<br>  // hide all the images except one<br>  for (i = 0; i &lt; images.length; i++) <br>    if (i === index) {<br>      console.log("show_slide", index)<br>      images[i].hidden = false<br>    } else {<br>      images[i].hidden = true<br>    }<br>}</pre>
-<hr>
-<p>Ref: <a href="https://dev.to/codefoxx/15-beginner-javascript-projects-to-improve-your-front-end-skills-5bcj" target="NewTab">#3 Image Carousel</a>
-</p>
 
 <script>
 "use strict";
@@ -76,5 +144,4 @@ title.innerText = document.title;
 sample.innerText = show_slide;
 show_slide(0)
 </script>
-
-<style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
+</h2><style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
