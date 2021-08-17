@@ -79,6 +79,28 @@ img { width: 100%; }
         </div>
 </div>
 
-<script src="script.js"></script>
+<script>
+"use strict";
+var index = 0;
+const images = document.querySelectorAll('img')
+function show_slide(i) {
+  //increment/decrement slide index
+  index += i;
+  // adjust index at two ends
+  if (index > images.length - 1) index = 0 ;
+  if (index < 0) index = images.length - 1;
+  // hide all the images except one
+  for (i = 0; i < images.length; i++) 
+    if (i === index) {
+      console.log("show_slide", index)
+      images[i].hidden = false
+    } else {
+      images[i].hidden = true
+    }
+}
+title.innerText = document.title;
+sample.innerText = show_slide;
+show_slide(0)
+</script>
 </body>
 </html>
