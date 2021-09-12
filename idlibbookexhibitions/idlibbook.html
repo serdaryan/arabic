@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+	<title> idlib book fair </title>
+	<style> /* CSS code in use */
+body { max-width: 500px; }
+#sample { overflow-x: auto; }
+#container {
+  width: 95%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;    
+}
+		h3 {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+}
+div {color: blue;}
+
+img { width: 100%; }
+#prev, #next {  
+  position: absolute;
+  top: 50px;
+  cursor: pointer;
+  padding: 16px;
+  color: green;
+  font-weight: bold;
+  user-select: none;
+}
+#prev{ left: 0; }
+#next{ right: 0; }
+#prev:hover, #next:hover {
+  background: rgba(0, 0, 0, 0.5);
+	#prev, #next {padding-top: initial;} 
+</style>
+</head>
+<body>
+<h2 id=bas>Idlib (authors') book fair first time
+ أول معرض للكتاب في إدلب</h2>
+<p id=but>
+<button onclick="a1.hidden=false; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a1</button>
+<button onclick="a1.hidden=true; a2.hidden=false; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a2</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=false;b2.hidden=true;c1.hidden=true;c2.hidden=true;">b1</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=false;c1.hidden=true;c2.hidden=true;">b2</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=false;c2.hidden=true;">c1</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></p>
+<p>abbreviations</p>
+<p> acc : requires accusative, pp: requires prepositional phrase</p>
+<h3 id="title">Book exhibition</h3>
+<div id="container">
+  <div> 
+    شمال سوريا – يحتضن المركز الثقافي بمدينة إدلب "معرض إدلب الأول للكتاب" الذي يستمر من الرابع حتى العاشر من الشهر الجاري، بهدف تشجيع الأهالي على القراءة وإعادة الألق إلى الحياة الثقافية في المدينة التي تهددها الحروب.
+  <img src="exhibhug.jpg"></div>
+  <div>
+    ويعتبر المعرض هو الأول من نوعه منذ سيطرة المعارضة السورية على مدينة إدلب في شمال غربي سوريا منذ أكثر من 6 سنوات، <img src="idlibdrawing.jpg"></div>
+  <div>حيث تراجع النشاط الفكري والثقافي في المدينة على وقع المعارك وتبعات النزوح والاشتباكات
+    <img src="idlibcombined.jpg"></div>
+  <a id="prev" onclick="show_slide(-1)">❮</a>
+  <a id="next" onclick="show_slide(1)">❯</a>
+</div>
+<pre id="a1" hidden=""> A1
+   (pp) شمال سوريا – يحتضن المركز  
+    ويعتبر المعرض (acc) بهدف
+
+Northern Syria - the center hosts (pp) with the purpose (acc) and the book fair is considered
+
+  </pre>
+<input type="checkbox" onclick="hug.hidden=!this.checked">احتضن يحتضن v.
+<pre id="hug" hidden="">احتضن يحتضن<img src="hug.jpg"></pre>
+<input type="checkbox" onclick="exhibhug.hidden=!this.checked"> ns. يحتضن معرضا للكتاب  <pre id="exhibhug" hidden=""><img src="exhibhug.jpg"></pre>
+<input type="checkbox" onclick="aim.hidden=!this.checked">n.هدف<pre id="aim" hidden=""><img src="aim.jpg"></pre>
+<input type="checkbox"onclick="center.hidden=!this.checked">n.مركز <pre id="center" hidden=""><img src="center.jpg"></pre>
+<pre id="a2" hidden=""> A2
+   (pp) شمال سوريا – يحتضن المركز
+    (acc) بهدف تشجيع الأهالي
+    ويعتبر المعرض هو الأول من نوعه 
+
+    Northern Syria - the center hosts with the purpose of encouraging the families (acc) and the fair is considered to the first of its own kind
+</pre>
+<pre id="b1" hidden=""> B1
+    (pp)شمال سوريا – يحتضن المركز
+    (acc) بهدف تشجيع الأهالي
+    ويعتبر المعرض هو الأول من نوعه ، حيث تراجع النشاط الفكري   
+
+    Northern Syria - the center hosts with the purpose of encouraging the families (acc) and the fair is considered to the first of its own kind which refers to an intellectual activity
+
+  </pre>
+<pre id="b2" hidden=""> B2 
+    شمال سوريا – يحتضن المركز الثقافي "معرض إدلب الأول للكتاب"
+    بهدف تشجيع الأهالي 
+    على القراءة وإعادة الألق إلى الحياة الثقافية
+  
+    ويعتبر المعرض هو الأول من ، حيث تراجع النشاط الفكري والثقافي في المدينة 
+
+    Northern Syria - the cultural center hosts the "the first Idlib (book) fair for the authors" with the purpose of encouraging the families to read and return to the connection with the cultural life and the fair is considered to the first of its own kind which refers to an intellectual activity
+
+  </pre>
+<pre id="c1" hidden=""> C1
+    شمال سوريا – يحتضن المركز الثقافي "معرض إدلب الأول للكتاب" ، بهدف تشجيع الأهالي على القراءة وإعادة الألق إلى الحياة الثقافية.
+
+    ويعتبر المعرض هو الأول من نوعه منذ سيطرة المعارضة السورية على مدينة ، حيث تراجع النشاط الفكري والثقافي في المدينة على وقع المعارك   
+
+    Northern Syria - the cultural center hosts the "the first Idlib (book) fair for the authors" with the purpose of encouraging the families to read and return to the connection with the cultural life 
+
+    And the fair is considered to be the first of its own kind since the Syrian opposition's control over the city, which refers to an intellectual and cultural activity despite the reality of the conflicts.
+
+<pre id="c2" hidden=""> C2
+    شمال سوريا – يحتضن المركز الثقافي بمدينة إدلب "معرض إدلب الأول للكتاب" الذي يستمر من الرابع حتى العاشر من الشهر الجاري، بهدف تشجيع الأهالي على القراءة وإعادة الألق إلى الحياة الثقافية في المدينة التي تهددها الحروب.
+
+    ويعتبر المعرض هو الأول من نوعه منذ سيطرة المعارضة السورية على مدينة إدلب في شمال غربي سوريا منذ أكثر من 6 سنوات، حيث تراجع النشاط الفكري والثقافي في المدينة على وقع المعارك وتبعات النزوح والاشتباكات   
+    
+    Northern Syria - the cultural center hosts the "the first Idlib (book) fair for the authors" which continues from 4th to the 10th of this month with the purpose of encouraging the families to read and return to the connection with the cultural life 
+    
+    And the fair is considered to be the first of its own kind since the Syrian opposition's control over the city of Idlib more than 6 years, which refers to an intellectual and cultural activity despite the reality of the conflicts and consequences of displacements and combats.
+</pre>
+<script>
+    "use strict";
+    var index = 0;
+    const images = container.querySelectorAll('div')
+    function show_slide(i) {
+      //increment/decrement slide index
+      index += i;
+      // adjust index at two ends
+      if (index > images.length - 1) index = 0 ;
+      if (index < 0) index = images.length - 1;
+      // hide all the images except one
+      for (i = 0; i < images.length; i++) 
+        if (i === index) {
+          console.log("show_slide", index)
+          images[i].hidden = false
+        } else {
+          images[i].hidden = true
+        }
+    }
+    title.innerText = document.title;
+    show_slide(0)
+    </script>
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {borer:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
+    
