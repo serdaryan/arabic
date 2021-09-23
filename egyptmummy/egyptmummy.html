@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+	<title> idlib book fair </title>
+	<style> /* CSS code in use */
+body { max-width: 500px; }
+#sample { overflow-x: auto; }
+#container {
+  width: 95%;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  position: relative;    
+}
+		h3 {
+  text-align: center;
+}
+
+div {
+  text-align: center;
+}
+div {color: blue;}
+
+img { width: 100%; }
+#prev, #next {  
+  position: absolute;
+  top: 50px;
+  cursor: pointer;
+  padding: 16px;
+  color: green;
+  font-weight: bold;
+  user-select: none;
+}
+#prev{ left: 0; }
+#next{ right: 0; }
+#prev:hover, #next:hover {
+  background: rgba(0, 0, 0, 0.5);
+	#prev, #next {padding-top: initial;} 
+</style>
+</head>
+<body>
+<h1 id=title>A new Egyptian Mummy Discovered in Egypt </h1>
+<p id=news>
+<button onclick="a1.hidden=false; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a1</button>
+<button onclick="a1.hidden=true; a2.hidden=false; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a2</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=false;b2.hidden=true;c1.hidden=true;c2.hidden=true;">b1</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=false;c1.hidden=true;c2.hidden=true;">b2</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=false;c2.hidden=true;">c1</button>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></p>
+
+<p>abbreviations</p>
+<p> acc : requires accusative, pp: requires prepositional phrase</p>
+
+<p id="a1" hidden=""> 
+    
+A1 
+the fossil is unknown. The creature lived years ago.
+The whale sported features. 
+
+<input type="checkbox" onclick="mummy.hidden=!this.checked">mummy
+<pre id="mummy" hidden=""> a waxed body over centuries <img src="mummy.jpg"></pre>
+
+</p>
+
+
+<p id="a2" hidden="">
+    A2 
+    the fossil of a whale, is unknown species. The creature lived 43 million years ago.
+    The prehistoric whale, lived on land and sea, sported features of an accomplished hunter
+
+</p>
+<p id="b1" hidden=""> B1
+    
+    The fossil of a four-legged, unearthed more than 10 years ago, is unknown species. The creature, an ancestor of the modern-day whale, lived 43 million years ago.
+    The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an hunter, making it stand out + pp  
+        
+  </p>
+<p id="b2" hidden=""> B2
+    Egyptian scientists say that the fossil of a four-legged prehistoric whale, unearthed more than 10 years ago in the country’s Western Desert is unknown species. The creature, an ancestor of the modern-day whale, lived 43 million years ago.
+The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an accomplished hunter, making it stand out + (pp)  
+
+  </p>
+<p id="c1" hidden=""> C1
+    Egyptian scientists say that the fossil of a four-legged prehistoric whale, unearthed more than 10 years ago in the country’s Western Desert is unknown species. The creature, an ancestor of the modern-day whale, lived 43 million years ago.
+    The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an accomplished hunter, making it stand out among other whale fossils.
+</p>
+
+<p id="c2" hidden="">
+    C2
+
+Egyptian scientists say the fossil of a four-legged prehistoric whale, unearthed more than 10 years ago in the country’s Western Desert, is that of a previously unknown species. The creature, an ancestor of the modern-day whale, is believed to have lived 43 million years ago.
+The prehistoric whale, known as semi-aquatic because it lived on land and sea, sported features of an accomplished hunter, making it stand out among other whale fossils, the team’s leading paleontologist Hesham Sallam told the Associated Press news agency on Tuesday.
+
+
+<h3 id="title">The Egyptian Mummy</h3>
+<div id="container">
+  <div> Egyptian scientists say the fossil of a four-legged prehistoric whale, unearthed more than 10 years ago in the country’s Western Desert,   
+  <img src="fourlegged.jpg"></div>
+
+<div>is that of a previously unknown species. <img src="uknown.png"></div>
+  
+<div>The creature, an ancestor of the modern-day whale,
+    <img src="modernwhale.jpg"></div>
+
+    <div>is believed to have lived 43 million years ago.<img src="whale.jpg"></div>
+
+    <div>The prehistoric whale, known as semi-aquatic
+      <img src="semiaquatic.jpg"></div>
+
+
+    <div>because it lived on land and sea, sported features of an accomplished hunter
+
+    <img src="hunter.jpg"></div>
+
+
+    <div>making it stand out among other whale fossils,
+    <img src="standout.gif"></div>
+    
+      
+    <div>the team’s leading paleontologist Hesham Sallam told the Associated Press news agency on Tuesday.
+    <img src="team.jpeg"></div>
+    
+  <a id="prev" onclick="show_slide(-1)">❮</a>
+  <a id="next" onclick="show_slide(1)">❯</a>
+</p>
+<script>
+    "use strict";
+    var index = 0;
+    const images = container.querySelectorAll('div')
+    function show_slide(i) {
+      //increment/decrement slide index
+      index += i;
+      // adjust index at two ends
+      if (index > images.length - 1) index = 0 ;
+      if (index < 0) index = images.length - 1;
+      // hide all the images except one
+      for (i = 0; i < images.length; i++) 
+        if (i === index) {
+          console.log("show_slide", index)
+          images[i].hidden = false
+        } else {
+          images[i].hidden = true
+        }
+    }
+    title.innerText = document.title;
+    show_slide(0)
+    </script>
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {border:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style>
+    <style>.tb_button {padding:1px;cursor:pointer;border-right: 1px solid #8b8b8b;border-left: 1px solid #FFF;border-bottom: 1px solid #fff;}.tb_button.hover {border:2px outset #def; background-color: #f8f8f8 !important;}.ws_toolbar {z-index:100000} .ws_toolbar .ws_tb_btn {cursor:pointer;border:1px solid #555;padding:3px}   .tb_highlight{background-color:yellow} .tb_hide {visibility:hidden} .ws_toolbar img {padding:2px;margin:0px}</style></body></html>
+    
