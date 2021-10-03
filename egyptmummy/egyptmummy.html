@@ -22,7 +22,8 @@ div {
 }
 div {color: blue;}
 
-.button :hover { color:yellow
+.button :hover { color:yellow;
+  background-color: blue;
 }
 
 img { width: 100%; }
@@ -40,6 +41,9 @@ img { width: 100%; }
 #prev:hover, #next:hover {
   background: rgba(0, 0, 0, 0.5);
 	#prev, #next {padding-top: initial;} 
+
+
+
 </style>
 </head>
 <body>
@@ -74,12 +78,12 @@ The whale sported features.
 <p id="b1" hidden=""> B1
     
     The fossil of a four-legged, unearthed more than 10 years ago, is unknown species. The creature, an ancestor of the modern-day whale, lived 43 million years ago.
-    The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an hunter, making it stand out + pp  
+    The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an hunter, making it stand out <abbr name="requires prepositional phrase">(pp)</abbr>
         
   </p>
 <p id="b2" hidden=""> B2
     Egyptian scientists say that the fossil of a four-legged prehistoric whale, unearthed more than 10 years ago in the country’s Western Desert is unknown species. The creature, an ancestor of the modern-day whale, lived 43 million years ago.
-The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an accomplished hunter, making it stand out + (pp)  
+The prehistoric whale, known as semi-aquatic, because it lived on land and sea, sported features of an accomplished hunter, making it stand out <abbr name="requires prepositional phrase">(pp)</abbr>  
 
   </p>
 <p id="c1" hidden=""> C1
@@ -125,8 +129,7 @@ The prehistoric whale, known as semi-aquatic because it lived on land and sea, s
   <a id="prev" onclick="show_slide(-1)">❮</a>
   <a id="next" onclick="show_slide(1)">❯</a>
 </p>
-<p>abbreviations</p>
-<p> acc : requires accusative, pp: requires prepositional phrase</p>
+
 <script>
     "use strict";
     var index = 0;
