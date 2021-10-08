@@ -38,6 +38,10 @@ div {
 }
 div {color: blue;}
 
+.button :hover { color:yellow;
+  background-color: blue;
+}
+
 img { width: 100%; }
 #prev, #next {  
   position: absolute;
@@ -58,21 +62,21 @@ img { width: 100%; }
 <body>
 <h2 id=bas>Idlib (authors') book fair first time
  أول معرض للكتاب في إدلب</h2>
-<p id=but>
+<p id=news>
+  <div class="button">
 <button onclick="a1.hidden=false; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a1</button>
 <button onclick="a1.hidden=true; a2.hidden=false; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=false;b2.hidden=true;c1.hidden=true;c2.hidden=true;">b1</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=false;c1.hidden=true;c2.hidden=true;">b2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=false;c2.hidden=true;">c1</button>
-<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></p>
-<p>abbreviations</p>
-<p> acc : requires accusative, pp: requires prepositional phrase</p>
-<pre id="a1" hidden=""> A1
-   (pp) شمال سوريا – يحتضن المركز  
-    ويعتبر المعرض (acc) بهدف
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></div></p>
 
-Northern Syria - the center hosts (acc) with the purpose<br>
-(pp) and the book fair is considered (to be)
+<pre id="a1" hidden=""> A1
+  <abbr name="requires prepositional phrase">(pp)</abbr>شمال سوريا – يحتضن المركز  
+    ويعتبر المعرض <abbr name="requires accusative">(acc)</abbr> بهدف
+
+Northern Syria - the center hosts <abbr name="requires accusative">(acc)</abbr> with the purpose<br>
+<abbr name="requires prepositional phrase">(pp)</abbr> and the book fair is considered (to be)
 </pre>
 <input type="checkbox" onclick="hug.hidden=!this.checked">احتضن يحتضن v.
 <pre id="hug" hidden="">احتضن يحتضن<img src="hug.jpg"></pre>
@@ -80,20 +84,20 @@ Northern Syria - the center hosts (acc) with the purpose<br>
 <input type="checkbox" onclick="aim.hidden=!this.checked">n.هدف<pre id="aim" hidden=""><img src="aim.jpg"></pre>
 <input type="checkbox"onclick="center.hidden=!this.checked">n.مركز <pre id="center" hidden=""><img src="center.jpg"></pre>
 <p id="a2" hidden=""> A2
-   (pp) شمال سوريا – يحتضن المركز
-    (acc) بهدف تشجيع الأهالي
+  <abbr name="requires prepositional phrase">(pp)</abbr>شمال سوريا – يحتضن المركز
+  <abbr name="requires accusative">(acc)</abbr> بهدف تشجيع الأهالي
     ويعتبر المعرض هو الأول من نوعه 
 <br>
 <br>
-    Northern Syria - the center hosts with the purpose of encouraging the families (acc) and the fair is considered to the first of its own kind
+    Northern Syria - the center hosts with the purpose of encouraging the families name <abbr name="requires accusative">(acc)</abbr> and the fair is considered to the first of its own kind
 </p>
 <p id="b1" hidden=""> B1
-    (pp)شمال سوريا – يحتضن المركز
-    (acc) بهدف تشجيع الأهالي
+  <abbr name="requires prepositional phrase">(pp)</abbr>شمال سوريا – يحتضن المركز
+    <abbr name="requires prepositional phrase">(pp)</abbr> بهدف تشجيع الأهالي
     ويعتبر المعرض هو الأول من نوعه ، حيث تراجع النشاط الفكري   
     <br>
     <br>
-    Northern Syria - the center hosts with the purpose of encouraging the families (acc) and the fair is considered to the first of its own kind which refers to an intellectual activity
+    Northern Syria - the center hosts with the purpose of encouraging the families <abbr name="requires accusative">(acc)</abbr> and the fair is considered to the first of its own kind which refers to an intellectual activity
   </p>
 <p id="b2" hidden=""> B2 
     شمال سوريا – يحتضن المركز الثقافي "معرض إدلب الأول للكتاب"
