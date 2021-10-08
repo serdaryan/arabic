@@ -5,6 +5,22 @@
 	<title> idlib book fair </title>
 	<style> /* CSS code in use */
 body { max-width: 500px; }
+abbr[name] {
+  position: relative;
+  text-decoration: underline dotted;
+  color: blue;
+}
+abbr[name]:hover::after {
+  content: attr(name);
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  white-space: nowrap;
+  background-color: blue;
+  color: white;
+  font-size: 13px;
+  padding: 4px 5px;
+}
 #sample { overflow-x: auto; }
 #container {
   width: 95%;

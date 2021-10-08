@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="en"><head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width">
 	<title> facebook </title>
 	<style> /* CSS code in use */
 body { max-width: 500px; }
+abbr[name] {
+  position: relative;
+  text-decoration: underline dotted;
+  color: blue;
+}
+abbr[name]:hover::after {
+  content: attr(name);
+  position: absolute;
+  left: 0;
+  bottom: -30px;
+  white-space: nowrap;
+  background-color: blue;
+  color: white;
+  font-size: 13px;
+  padding: 4px 5px;
+}
 #sample { overflow-x: auto; }
 #container {
   width: 95%;
@@ -22,6 +39,9 @@ div {
 }
 div {color: blue;}
 
+.button :hover { color:yellow;
+  background-color: blue;
+}
 img { width: 100%; }
 #prev, #next {  
   position: absolute;
@@ -37,21 +57,24 @@ img { width: 100%; }
 #prev:hover, #next:hover {
   background: rgba(0, 0, 0, 0.5);
 	#prev, #next {padding-top: initial;} 
+
 </style>
 </head>
 <body>
-<h1 id=title>Facebook crash exposes risks in social networking products
+  
+<h2 id=title>Facebook crash exposes risks in social networking products
 
-</h1>
+</h2>
 <p id=news>
+  <div class="button">
 <button onclick="a1.hidden=false; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a1</button>
 <button onclick="a1.hidden=true; a2.hidden=false; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=false;b2.hidden=true;c1.hidden=true;c2.hidden=true;">b1</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=false;c1.hidden=true;c2.hidden=true;">b2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=false;c2.hidden=true;">c1</button>
-<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></p>
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></div></p>
 
-<cite> https://www.aljazeera.com/economy/2021/10/5/facebook-crash-exposes-risks-in-social-networking-products the news and images are taken from aljazeera news</cite>
+
 
 
 <p id="a1" hidden=""> 
@@ -135,6 +158,9 @@ While Europe awoke to find Facebook, Instagram, WhatsApp and Messenger services 
 <a id="prev" onclick="show_slide(-1)">❮</a>
 <a id="next" onclick="show_slide(1)">❯</a>
 </p>
+<cite> </cite>
+
+<a href= "https://www.aljazeera.com/economy/2021/10/5/facebook-crash-exposes-risks-in-social-networking-products" >the news and images are taken from aljazeera news</a>
 
 <script>
     "use strict";

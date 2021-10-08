@@ -21,7 +21,9 @@ div {
   text-align: center;
 }
 div {color: blue;}
-
+.button :hover { color:yellow;
+  background-color: blue;
+}
 img { width: 100%; }
 #prev, #next {  
   position: absolute;
@@ -34,25 +36,25 @@ img { width: 100%; }
 }
 #prev{ left: 0; }
 #next{ right: 0; }
+
 #prev:hover, #next:hover {
   background: rgba(0, 0, 0, 0.5);
 	#prev, #next {padding-top: initial;} 
 </style>
 </head>
 <body>
-<h1 id=title>La Palma volcano: Visual guide to what happened
-</h1>
+<h2 id=title>La Palma volcano: Visual guide to what happened
+</h2>
 <p id=news>
+  <div class="button">
+
 <button onclick="a1.hidden=false; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a1</button>
 <button onclick="a1.hidden=true; a2.hidden=false; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=true;">a2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=false;b2.hidden=true;c1.hidden=true;c2.hidden=true;">b1</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=false;c1.hidden=true;c2.hidden=true;">b2</button>
 <button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=false;c2.hidden=true;">c1</button>
-<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></p>
-
-<cite> https://www.bbc.com/news/world-europe-58681233 thew news and images are taken from BBC news</cite>
-
-
+<button onclick="a1.hidden=true; a2.hidden=true; b1.hidden=true;b2.hidden=true;c1.hidden=true;c2.hidden=false;">c2</button></div>
+</p>
 <p id="a1" hidden=""> 
     
 A1 
@@ -160,6 +162,7 @@ Many have lost everything
 <a id="next" onclick="show_slide(1)">❯</a>
 </p>
 
+<a href= "https://www.bbc.com/news/world-europe-58681233 " >the news and images are taken from BBC news</a>
 <script>
     "use strict";
     var index = 0;
