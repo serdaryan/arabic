@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K Dictionary - Turkish-Bengali</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="description" content="A Turkish-Bengali dictionary example for words starting with K." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #007BFF;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #f9f9f9;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+        li strong {
+            display: block;
+            font-size: 18px;
+            color: #007BFF;
+            margin-bottom: 5px;
+        }
+        .btn-group {
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+        }
+        .btn-group .btn {
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Turkish-Bengali Dictionary - K Words</h1>
+        <div class="btn-group">
+            <button class="btn btn-default" onclick="iA('ç')">ç</button>
+            <button class="btn btn-default" onclick="iA('ı')">ı</button>
+            <button class="btn btn-default" onclick="iA('ğ')">ğ</button>
+            <button class="btn btn-default" onclick="iA('ö')">ö</button>
+            <button class="btn btn-default" onclick="iA('ş')">ş</button>
+            <button class="btn btn-default" onclick="iA('ü')">ü</button>
+            <button class="btn btn-default" onclick="iA('â')">â</button>
+            <button class="btn btn-default all-keyboard" onclick="$('#keyboard').toggle();">Toggle Keyboard</button>
+        </div>
+        <input type="text" id="search" placeholder="Search for a word..." onkeyup="filterWords()">
+        <ul id="dictionary"></ul>
+    </div>
+    <script>
+        const dictionary = [
+            {turkish: "kaba", type: "sifat", bengali: "কককশ,অমার্জকত,অমৃসণ"},
+            {turkish: "kabaca", type: "zarf", bengali: "মমাটামুটি,র্িশৃঙ্খলভাবি"},
+            {turkish: "kabadayı", type: "isim", bengali: "উচ্ছৃঙ্খল,গুন্ডা"},
+            {turkish: "kabahat", type: "isim", bengali: "ম াষ"},
+            {turkish: "kabak", type: "isim", bengali: "লাউ,কুমরা"},
+            {turkish: "kabakulak", type: "tıp.", bengali: "গন্ডমালা মরাগ"},
+            {turkish: "kabalaşmak", type: "fiil", bengali: "অমার্জকত হওয়া"},
+            {turkish: "kabara", type: "isim", bengali: "টপওয়ালা মপবরক"},
+            {turkish: "kabarcık", type: "isim", bengali: "ম াস্কা,সামান্য ুবল উঠা"},
+            {turkish: "kabarık", type: "sifat", bengali: "স্ফীত,গালভরা"},
+            {turkish: "kabartma", type: "isim", bengali: "উন্নীত,উ যত,উপশম"},
+            {turkish: "kabarmak", type: "fiil", bengali: "স্ফীত হওয়া,প্রসার্রত হওয়া"},
+            {turkish: "kabartı", type: "isim", bengali: "স্ফীর্ত অংশ"},
+            {turkish: "kabataslak", type: "sifat", bengali: "মমাটা খসড়া,রূপবরখা"},
+            {turkish: "kabe", type: "din. bl.", bengali: "কাবা"},
+            {turkish: "kabız", type: "isim", bengali: "মকাষ্ঠিদ্ধতা"},
+            {turkish: "kabil", type: "sifat", bengali: "সাধ্য,করা সাধ্য এমন"},
+            {turkish: "kabile", type: "sosyoloji", bengali: "উপজার্ত,মগাষ্ঠী"},
+            {turkish: "kabotaj", type: "ticaret", bengali: "উপকূল িার্ন্জয"},
+            {turkish: "kabristan", type: "din. bl.", bengali: "কিরস্থান"},
+            {turkish: "kabuk", type: "isim", bengali: "মখাল,িাকল,ম ালা"},
+            {turkish: "kabuklanmak", type: "fiil", bengali: "িাকল উঠা,মখাল জন্মাবন্া"},
+            {turkish: "kabul", type: "isim", bengali: "স্বীকৃর্ত"},
+            {turkish: "kabullenmek", type: "fiil", bengali: "গৃহ ণ করা"},
+            {turkish: "kaburga", type: "anatomi", bengali: "পাাঁজর"},
+            {turkish: "kabus", type: "isim", bengali: "দু: স্বপ্ন"},
+            {turkish: "kabza", type: "isim", bengali: "ম ারার হাতল,কব্জা"},
+            {turkish: "kabzımal", type: "isim", bengali: "মধ্যস্বত্ববভাগী"},
+            {turkish: "kaç", type: "isim", bengali: "কত"},
+            {turkish: "kaçak", type: "isim", bengali: "পলাতক,পাচার"},
+            {turkish: "kaçakçı", type: "isim", bengali: "মচারাকারিার্র"},
+            {turkish: "kaçamak", type: "fiil", bengali: "এড়াবন্ার মকৌশল করা"},
+            {turkish: "kaçar", type: "sifat", bengali: "কতগুবলা কবর, কতটি"},
+            {turkish: "kaçınılmaz", type: "sifat", bengali: "অর্ন্িার্ক"},
+            {turkish: "kaçınmak", type: "fiil", bengali: "র্নিরত থাকা"},
+            {turkish: "kaçırma", type: "isim", bengali: "পাচার"},
+            {turkish: "kaçırmak", type: "fiil", bengali: "হাইবজযক করা,ভাগাবন্া,র্ন্বয় পার্লবয় র্াওয়া"},
+            {turkish: "kaçışmak", type: "fiil", bengali: "অদৃশয করা,পলায়ন্ করা"},
+            {turkish: "kaçkın", type: "isim", bengali: "পলাতক,চম্পট,মর্ কাজ মথবক ভাবগ"},
+            {turkish: "kaçlı", type: "sifat", bengali: "কততম,কত,কতটুকু"},
+            {turkish: "kaçlık", type: "sifat", bengali: "কতটুকু,কত পর্রমান্"},
+            {turkish: "kaçma", type: "isim", bengali: "পলায়ন্"},
+            {turkish: "kaçmak", type: "fiil", bengali: "পালাবন্া,পলাতন্ করা"},
+            {turkish: "kadana", type: "zooloji", bengali: "িড় প্রজার্তর একধ্রবন্র ম ারা"},
+            {turkish: "kadar", type: "edat", bengali: "পর্কন্ত"},
+            {turkish: "kadastro", type: "isim", bengali: "তার্লকাভুক্ত, ত র্সলভুক্ত, পূিকাবে র্ন্ধ্াকর্রত"},
+            {turkish: "kadavra", type: "isim", bengali: "মৃতব হ,লাশ"}
+        ];
+
+        function filterWords() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const filteredDictionary = dictionary.filter(entry => entry.turkish.toLowerCase().includes(input));
+            displayWords(filteredDictionary);
+        }
+
+        function displayWords(words) {
+            const dictionaryElement = document.getElementById('dictionary');
+            dictionaryElement.innerHTML = '';
+            words.forEach(word => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `<strong>${word.turkish} (${word.type})</strong>${word.bengali}`;
+                dictionaryElement.appendChild(listItem);
+            });
+        }
+
+        // Display all words by default
+        displayWords(dictionary);
+    </script>
+</body>
+</html>
